@@ -1,4 +1,4 @@
-module github.com/AllenDang/imgui-go
+module github.com/ianling/imgui-go
 
 require (
 	github.com/go-gl/gl v0.0.0-20210315015930-ae072cafe09d
