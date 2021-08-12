@@ -138,10 +138,10 @@ IggBool iggIoGetMouseDrawCursor(IggIO handle)
    return io->MouseDrawCursor ? 1 : 0;
 }
 
-void iggIoSetMouseDrawCursor(IggIO handle, IggBool value)
+void iggIoSetMouseDrawCursor(IggIO handle, IggBool show)
 {
-   ImGuiIO *io = reinterpret_cast<ImGuiIO *>(handle);
-   io->MouseDrawCursor = value != 0;
+   ImGuiIO &io = *reinterpret_cast<ImGuiIO *>(handle);
+   io.MouseDrawCursor = show != 0;
 }
 
 void iggIoKeyPress(IggIO handle, int key)
@@ -217,6 +217,12 @@ void iggIoSetBackendFlags(IggIO handle, int flags)
 {
    ImGuiIO &io = *reinterpret_cast<ImGuiIO *>(handle);
    io.BackendFlags = flags;
+}
+
+int iggIoGetBackendFlags(IggIO handle)
+{
+   ImGuiIO &io = *reinterpret_cast<ImGuiIO *>(handle);
+   return io.BackendFlags;
 }
 
 extern "C" void iggIoSetClipboardText(IggIO handle, char *text);

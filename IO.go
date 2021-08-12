@@ -312,6 +312,11 @@ func (io IO) SetBackendFlags(flags BackendFlags) {
 	C.iggIoSetBackendFlags(io.handle, C.int(flags))
 }
 
+// GetBackendFlags gets the current backend flags.
+func (io IO) GetBackendFlags() BackendFlags {
+	return BackendFlags(C.iggIoGetBackendFlags(io.handle))
+}
+
 func (io IO) GetFrameCountSinceLastInput() int {
 	return int(C.iggGetFrameCountSinceLastInput(io.handle))
 }

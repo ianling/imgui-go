@@ -43,8 +43,6 @@ extern void iggSetMouseCursor(int cursor);
 extern void iggGetItemRectMax(IggVec2 *pos);
 extern void iggGetItemRectMin(IggVec2 *pos);
 
-extern void iggPushClipRect(const IggVec2 *clip_rect_min, const IggVec2 *clip_rect_max, IggBool intersect_with_clip_rect);
-extern void iggPopClipRect();
 
 
 #ifdef __cplusplus

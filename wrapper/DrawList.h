@@ -60,6 +60,9 @@ extern void iggAddImageV(IggDrawList handle, IggTextureID id,
                                 IggPackedColor color);
 
 
+extern void iggPushClipRect(IggDrawList handle, IggVec2 const *min, IggVec2 const *max, IggBool intersectWithCurrentClipRect);
+extern void iggPopClipRect(IggDrawList handle);
+
 extern IggDrawList iggGetWindowDrawList();
 extern IggDrawList iggGetBackgroundDrawList();
 
