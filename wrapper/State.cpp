@@ -152,16 +152,3 @@ void iggGetItemRectMax(IggVec2 *pos)
 {
    exportValue(*pos, ImGui::GetItemRectMax());
 }
-
-void iggPushClipRect(const IggVec2 *clip_rect_min, const IggVec2 *clip_rect_max, IggBool intersect_with_clip_rect)
-{
-   Vec2Wrapper clipMin(clip_rect_min);
-   Vec2Wrapper clipMax(clip_rect_max);
-   ImGui::PushClipRect(*clipMin, *clipMax, intersect_with_clip_rect);
-}
-
-void iggPopClipRect()
-{
-   ImGui::PopClipRect();
-}
-
